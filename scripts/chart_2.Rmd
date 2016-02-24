@@ -9,9 +9,7 @@ library(plotly)
 library(dplyr)
 
 # Chart Two
-# The total amount of students who identified their programming level experience in INFO498f 
-
-chart_2 <- function(dataset) {
+# The total amount of students who identified their programming level experience in INFO498f
     summarized_data <- dataset %>% 
     group_by(What.is.your.programming.experience.) %>% 
     summarise(
@@ -25,11 +23,12 @@ chart_2 <- function(dataset) {
           type = "bar",
           color = What.is.your.programming.experience.
   ) %>% layout(
-    barmode = "stack",
+    barmode = "group",
+    bargap = 0.1,
+    width = 0.22, 
     title = "INFO498f - Program Experience Level",
     xaxis = list(title = "Program Experience Level"),
     yaxis = list(title = "Number of Students")
   )
-}  
 
 
