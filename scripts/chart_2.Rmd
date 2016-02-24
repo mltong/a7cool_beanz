@@ -25,7 +25,6 @@ library(dplyr)
   ) %>% layout(
     barmode = "group",
     bargap = 0.1,
-    width = 0.22, 
     title = "INFO498f - Program Experience Level",
     xaxis = list(title = "Program Experience Level"),
     yaxis = list(title = "Number of Students")
