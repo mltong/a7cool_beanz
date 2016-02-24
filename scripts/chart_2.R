@@ -4,12 +4,17 @@ library(dplyr)
 
 # Chart Two
 # The total amount of students who identified their programming level experience in INFO498f
+
 chart_2 <- function(data) {
 
-summarized_data <- data %>% 
-  group_by(What.is.your.programming.experience.) %>% 
-  summarise(
-    num_students = n()
+  # Read in data
+  data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
+
+  # Group the students by their programming experience
+  summarized_data <- data %>% 
+                     group_by(What.is.your.programming.experience.) %>% 
+                     summarise(
+                     num_students = n()
   )
 
 plot_ly(summarized_data,
