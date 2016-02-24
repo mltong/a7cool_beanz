@@ -10,4 +10,24 @@ library(knitr)
 
 data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
 
+source("summary_function.R")
+list <- write_summary(data)
 ```
+
+#Informatics 498f Infomation
+
+Welcome to info498f where we have `r list$num_freshman` freshman, `r list$num_sophomore` sophomores, `r list$num_junior` juniors, 
+and `r list$num_seniors` seniors.  We learn and perform various tasks using R.  However, we use different operating systems to do these tasks.  Here is that information visualized in total and by class:
+
+```{r, echo=FALSE, message=FALSE}
+source("os_user_info.R")
+os_user_total_info(data)
+os_user_by_class(data)
+```
+
+```{r, echo=FALSE, message=FALSE}
+source("chart_2.R")
+
+```
+
+
