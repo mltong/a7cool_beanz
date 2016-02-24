@@ -6,7 +6,7 @@ library(dplyr)
 # The total amount of students who identified their programming level experience in INFO498f
 chart_2 <- function(datasest) {
 
-summarized_data <- dataset %>% 
+summarized_data <- select(dataset) %>% 
   group_by(What.is.your.programming.experience.) %>% 
   summarise(
     num_students = n()
