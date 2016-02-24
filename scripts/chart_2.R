@@ -12,9 +12,9 @@ chart_2 <- function(data) {
 
   # Group the students by their programming experience
   summarized_data <- data %>% 
-                     group_by(What.is.your.programming.experience.) %>% 
-                     summarise(
-                     num_students = n()
+    group_by(What.is.your.programming.experience.) %>% 
+    summarise(
+    num_students = n()
   )
 
 plot_ly(summarized_data,
