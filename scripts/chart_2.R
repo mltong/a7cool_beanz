@@ -4,12 +4,16 @@ library(dplyr)
 
 # Chart Two
 # The total amount of students who identified their programming level experience in INFO498f
+
 chart_2 <- function(data) {
 
-summarized_data <- select(data) %>% 
-  group_by(What.is.your.programming.experience.) %>% 
-  summarise(
-    num_students = n()
+
+  # Group the students by their programming experience
+  summarized_data <- select(data) %>% 
+                     group_by(data$What.is.your.programming.experience.) %>% 
+                     summarise(
+                     num_students = n()
+
   )
 
 plot_ly(summarized_data,
@@ -17,7 +21,7 @@ plot_ly(summarized_data,
         y = num_students,
         name = "Programming Experience",
         type = "bar",
-        color = What.is.your.programming.experience.
+        color = "Red"
 ) %>% layout(
   barmode = "group",
   bargap = 0.1,
