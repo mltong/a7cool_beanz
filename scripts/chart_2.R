@@ -6,10 +6,10 @@ library(dplyr)
 # The total amount of students who identified their programming level experience in INFO498f
 
 chart_2 <- function(data) {
-
-
+  # Read in data 
+  data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
+  
   # Group the students by their programming experience
-
   summarized_data <- select(data) %>% 
     group_by(data$What.is.your.programming.experience.) %>% 
     summarise(
