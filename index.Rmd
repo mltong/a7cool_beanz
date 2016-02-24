@@ -7,9 +7,8 @@ output: html_document
 library(dplyr)
 library(plotly)
 library(knitr)
-
+setwd("/Users/LukeCommins/Documents/info498f/a7cool_beanz/scripts/")
 data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
-
 source("summary_function.R")
 list <- write_summary(data)
 ```
@@ -20,14 +19,18 @@ Welcome to info498f where we have `r list$num_freshman` freshman, `r list$num_so
 and `r list$num_seniors` seniors.  We learn and perform various tasks using R.  However, we use different operating systems to do these tasks.  Here is that information visualized in total and by class:
 
 ```{r, echo=FALSE, message=FALSE}
+setwd("/Users/LukeCommins/Documents/info498f/a7cool_beanz/scripts/")
 source("os_user_info.R")
 os_user_total_info(data)
 os_user_by_class(data)
 ```
 
-```{r, echo=FALSE, message=FALSE}
-source("chart_2.R")
+Now let's look at the experience level of the class:
 
+```{r, echo=FALSE, message=FALSE}
+setwd("/Users/LukeCommins/Documents/info498f/a7cool_beanz/scripts/")
+source("chart_2.R")
+chart_2(data)
 ```
 
-
+Have a nice day!
