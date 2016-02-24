@@ -4,6 +4,8 @@ library(dplyr)
 
 # Chart Two
 # The total amount of students who identified their programming level experience in INFO498f
+chart_2 <- function(datasest) {
+
 summarized_data <- dataset %>% 
   group_by(What.is.your.programming.experience.) %>% 
   summarise(
@@ -23,4 +25,4 @@ plot_ly(summarized_data,
   xaxis = list(title = "Program Experience Level"),
   yaxis = list(title = "Number of Students")
 )
-
+}
