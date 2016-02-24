@@ -9,11 +9,18 @@ chart_2 <- function(data) {
 
 
   # Group the students by their programming experience
+<<<<<<< HEAD
   summarized_data <- select(data) %>% 
                      group_by(data$What.is.your.programming.experience.) %>% 
                      summarise(
                      num_students = n()
 
+=======
+  summarized_data <- data %>% 
+    group_by(What.is.your.programming.experience.) %>% 
+    summarise(
+    num_students = n()
+>>>>>>> 287cd373c54ae677a96ad8df1f6400dcc7a6b565
   )
 
 plot_ly(summarized_data,
